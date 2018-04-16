@@ -42,7 +42,10 @@ var dynamoDb = new AWS.DynamoDB.DocumentClient()
 
 app.get('/items/restaurants', function(req, res) {
     // performs a DynamoDB Scan operation to extract all of the records in the table
-    dynamoDb.scan({ TableName: RESTAURANTS_TABLE_NAME}, function(err, data) {
+    dynamoDb.query({ TableName: RESTAURANTS_TABLE_NAME, KeyConditionExpression: 'userID = :s',
+    ExpressionAttributeValues: {
+        ':s': {N: 'andy'}}
+    }, function(err, data) {    
         if (err) {
             console.log(err)
             res.status(500).json({
@@ -52,6 +55,7 @@ app.get('/items/restaurants', function(req, res) {
             res.json(data['Items'])
         }
     })
+
 })
 /*
 app.get('/items/restaurants/andy:userID', function(req, res) {
@@ -83,7 +87,7 @@ app.get('/items/restaurants/andy:userID', function(req, res) {
         }
     })
 })*/
-
+/*
 app.get('/items/restaurants/:restaurantId', function(req, res) {
     // Extracts a specific restaurant from the databsae. If an invalid restaurantId is sent
     // we will returna 400 status code. If the parameter value is valid but we cannot find
@@ -93,29 +97,21 @@ app.get('/items/restaurants/:restaurantId', function(req, res) {
             message: "Invalid restaurant ID"
         }).end()
     }
-    dynamoDb.get({
-        TableName: RESTAURANTS_TABLE_NAME,
-        Key: {
-            userID: "andy"
-        }
+    dynamoDb.query({ TableName: RESTAURANTS_TABLE_NAME, KeyConditionExpression: 'userID = :s',
+    ExpressionAttributeValues: {
+        ':s': {N: 'andy'}}
     }, function(err, data) {
         if (err) {
             console.log(err)
             res.status(500).json({
-                message: "Could not load restaurant"
+                message: "Could not load restaurants"
             }).end()
         } else {
-            if (data['Item']) {
-                res.json(data['Item'])
-            } else {
-                res.status(404).json({
-                    message: "The restaurant does not exist"
-                })
-            }
+            res.json(data['Items'])
         }
     })
 })
-
+*/
 /***************************
  * Restaurant menu methods *
  ***************************/

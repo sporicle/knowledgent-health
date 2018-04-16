@@ -11,7 +11,7 @@ features:
           sdk-generation-stage-name: Development
         paths:
           /items: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/ReactSample-20180410214408.zip
+            codeFilename: uploads/ReactSample-20180416153640.zip
             description: 'Handler for calls to resource path : /items/{proxy+}'
             enableCORS: true
             environment:
@@ -19,15 +19,15 @@ features:
               ORDERS_TABLE_NAME: healthassistant-mobilehub-1511769148-bbq_orders
               RESTAURANTS_TABLE_NAME: healthassistant-mobilehub-1511769148-foods
             handler: lambda.handler
-            hashcode: ZUTY8CjOLg85TwBexprQvvoTq5xYj16AVEeGWemmLgY=
+            hashcode: N4qyVSwJ+lzAPe+MpFmjt8mVw3XsgLjH9kmQQ+fpiAg=
             memorySize: '128'
-            modified: '2018-04-11T01:44:19.247+0000'
+            modified: '2018-04-16T19:36:59.961+0000'
             name: ReactSample
             runtime: nodejs6.10
             timeout: '3'
-            version: 1YxNLIyQ0ZjwjMy3vVNzH8IZFyPlMXRT
+            version: WTh6Gope2VpKNif.FW_XfLzU2c9MaMDt
           '/items/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/ReactSample-20180410214408.zip
+            codeFilename: uploads/ReactSample-20180416153640.zip
             description: 'Handler for calls to resource path : /items/{proxy+}'
             enableCORS: true
             environment:
@@ -35,13 +35,13 @@ features:
               ORDERS_TABLE_NAME: healthassistant-mobilehub-1511769148-bbq_orders
               RESTAURANTS_TABLE_NAME: healthassistant-mobilehub-1511769148-foods
             handler: lambda.handler
-            hashcode: ZUTY8CjOLg85TwBexprQvvoTq5xYj16AVEeGWemmLgY=
+            hashcode: N4qyVSwJ+lzAPe+MpFmjt8mVw3XsgLjH9kmQQ+fpiAg=
             memorySize: '128'
-            modified: '2018-04-11T01:44:19.247+0000'
+            modified: '2018-04-16T19:36:59.961+0000'
             name: ReactSample
             runtime: nodejs6.10
             timeout: '3'
-            version: aI5eBSDiSiF4XfYclkeaXokp6dkQNcy0
+            version: oumBVig7lsa9k2HMRVJiVB9x_xQfLvQD
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true
